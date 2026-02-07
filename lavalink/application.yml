@@ -1,0 +1,157 @@
+lavalink:
+    server:
+        # Buffers improved for smooth high-bitrate playback
+        bufferDurationMs: 3000
+        frameBufferDurationMs: 5000
+
+        # Audio quality
+        opusEncodingQuality: 10
+        resamplingQuality: HIGH
+
+        # Filters (keep all enabled, but added EQ preset for clarity & punch)
+        filters:
+            channelMix: true
+            distortion: true
+            equalizer: true
+            karaoke: true
+            lowPass: true
+            rotation: true
+            timescale: true
+            tremolo: true
+            vibrato: true
+            volume: true
+            equalizerBands:
+                - band: 0
+                  gain: 0.25
+                - band: 1
+                  gain: 0.20
+                - band: 2
+                  gain: 0.15
+                - band: 3
+                  gain: 0.10
+                - band: 4
+                  gain: 0.05
+                - band: 5
+                  gain: 0.05
+                - band: 6
+                  gain: 0.05
+                - band: 7
+                  gain: 0.00
+                - band: 8
+                  gain: -0.05
+                - band: 9
+                  gain: -0.05
+                - band: 10
+                  gain: -0.10
+                - band: 11
+                  gain: 0.00
+                - band: 12
+                  gain: 0.00
+                - band: 13
+                  gain: 0.00
+
+        # Playback & player settings
+        gcWarnings: true
+        playerUpdateInterval: 50
+        trackStuckThresholdMs: 10000
+        useSeekGhosting: true
+
+        # Security & limits
+        password: noteninja
+        youtubePlaylistLoadLimit: 6
+        youtubeSearchEnabled: true
+        soundcloudSearchEnabled: true
+
+        # Sources
+        sources:
+            bandcamp: true
+            http: true
+            local: false
+            nico: true
+            soundcloud: true
+            twitch: true
+            vimeo: true
+            youtube: false
+
+lavasrc:
+    applemusic:
+        albumLoadLimit: 6
+        playlistLoadLimit: 6
+        countryCode: US
+        mediaAPIToken: REDACTED
+
+    flowerytts:
+        audioFormat: mp3
+        silence: 0
+        speed: 1
+        translate: false
+        voice: default voice
+
+    providers:
+        - spsearch:%QUERY%
+        
+        - ytmsearch:%QUERY%
+
+    sources:
+        applemusic: false
+        deezer: false
+        flowerytts: false
+        spotify: true
+        yandexmusic: false
+
+    spotify:
+        albumLoadLimit: 6
+        playlistLoadLimit: 6
+        clientId: f71a3da30e254962965ca2a89d6f74b9
+        clientSecret: 199a619d22dd4e55a4a2c1a7a3d70e63
+        countryCode: US
+
+    yandexmusic:
+        accessToken: REDACTED
+
+plugins:
+  youtube:
+    enabled: true
+
+    clients:
+      - WEB
+      - WEB_REMIX
+      - TVHTML5_SIMPLY_EMBEDDED_PLAYER
+
+    oauth:
+      enabled: true
+      refreshToken: 1//0gYrCEfExaVowCgYIARAAGBASNgF-L9IrAiETXZLZvoN82eIeLcnIHfs_vUj8jzc5caAljEh_3N3zLqNc7jy2H1EEOSoFklLGHA
+      skipInitialization: true   
+
+logging:
+    file:
+        path: ./logs/
+    level:
+        lavalink: INFO
+        root: INFO
+    logback:
+        rollingPolicy:
+            maxFileSize: 1GB
+            maxHistory: 30
+    request:
+        enabled: true
+        includeClientInfo: true
+        includeHeaders: false
+        includePayload: true
+        includeQueryString: true
+        maxPayloadLength: 10000
+
+metrics:
+    prometheus:
+        enabled: false
+        endpoint: /metrics
+
+sentry:
+    dsn: ""
+    environment: ""
+
+server:
+    address: 0.0.0.0
+    http2:
+        enabled: false
+    port: 6379

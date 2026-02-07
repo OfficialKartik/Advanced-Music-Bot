@@ -1,0 +1,24 @@
+{
+  "name": "musix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aqul/akinator-api": "^3.0.1",
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.11.0",
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "musicard": "^2.0.5",
+    "node-fetch": "^2.7.0",
+    "riffy": "^1.0.7",
+    "spotify-url-info": "^3.2.18"
+  }
+}
